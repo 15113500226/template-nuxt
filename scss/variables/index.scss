@@ -1,0 +1,9 @@
+@import './borderVariables.scss';
+@import './colorVariables.scss';
+@import './fontVariables.scss';
+@import './shadowVariables.scss';
+@import './transitionVariables.scss';
+@import './zIndexVariables.scss';
+@import './disabledVariables.scss'; // 放在 color 和 border 之下
+@import './buttonVariables.scss';
+@import './tableVariables.scss';

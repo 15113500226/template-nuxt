@@ -1,0 +1,701 @@
+body {
+  .el-header {
+    height: auto !important;
+    padding: 0;
+  }
+
+  .el-main {
+    padding: 0;
+  }
+
+  .el-scrollbar {
+    .el-scrollbar__wrap {
+      max-height: inherit;
+      overflow-x: hidden;
+      margin-bottom: 0 !important;
+    }
+    .el-scrollbar__bar {
+      z-index: 99;
+      &.is-horizontal {
+        height: auto;
+        .el-scrollbar__thumb {
+          height: 6px;
+          &:hover, &:active {
+            height: 10px;
+          }
+        }
+      }
+      &.is-vertical {
+        width: auto;
+        .el-scrollbar__thumb {
+          width: 6px;
+          &:hover, &:active {
+            width: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .el-input {
+    .el-input__inner {
+      color: $textColorRegular;
+    }
+    &:not(.is-disabled) .el-input__inner {
+      &:hover, &:focus {
+        border-color: $colorPrimary;
+      }
+    }
+    .el-input__prefix, .el-input__suffix {
+      @extend .d_if;
+      @extend .ai_c;
+      line-height: 1.15;
+    }
+    &:not(.el-date-editor) {
+      .el-input__prefix {
+        left: 8px;
+      }
+      .el-input__suffix {
+        right: 8px;
+      }
+    }
+    &.showonly.is-disabled .el-input__inner {
+      color: $textColorRegular;
+    }
+  }
+
+  .el-textarea {
+    .el-textarea__inner {
+      min-height: 36px !important;
+    }
+    &:not(.is-disabled) .el-textarea__inner {
+      &:hover, &:focus {
+        border-color: $colorPrimary;
+      }
+    }
+  }
+
+  .el-select {
+    .el-input.is-focus .el-input__inner {
+      border-color: $colorPrimary;
+    }
+    .el-input {
+      .el-input__prefix {
+        left: 5px;
+      }
+      .el-input__suffix {
+        right: 5px;
+      }
+    }
+    &.showonly .el-input.is-disabled .el-input__inner {
+      color: $textColorRegular;
+    }
+  }
+  .el-select-dropdown {
+    max-height: 420px;
+    .el-scrollbar {
+      max-height: inherit;
+    }
+  }
+
+  .el-cascader {
+    &:not(.is-disabled):hover .el-input__inner, .el-input.is-focus .el-input__inner {
+      border-color: $colorPrimary !important;
+    }
+    .el-input {
+      .el-input__prefix {
+        left: 5px;
+      }
+      .el-input__suffix {
+        right: 5px;
+      }
+    }
+    &.showonly .el-input.is-disabled .el-input__inner {
+      color: $textColorRegular;
+    }
+  }
+
+  .el-autocomplete {
+    .el-input {
+      .el-input__prefix {
+        left: 5px;
+      }
+      .el-input__suffix {
+        right: 5px;
+      }
+    }
+    &.showonly .el-input.is-disabled .el-input__inner {
+      color: $textColorRegular;
+    }
+  }
+
+  .el-cascader-panel {
+    .el-cascader-node.is-active, .el-cascader-node.is-selectable.in-checked-path {
+      color: $colorPrimary;
+    }
+  }
+
+  .el-form {
+    &.form_item > .el-row {
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: 22px;
+      }
+    }
+    .el-form-item__label {
+      color: $textColorPrimary;
+    }
+  }
+
+  .el-table {
+    border-color: $tableBorderColor;
+    &::before, &::after {
+      background-color: $tableBorderColor;
+    }
+    .el-table__fixed-right-patch {
+      background-color: $tableHeaderBackgroundColor;
+    }
+    .el-table__header {
+      font-size: $fontSizeMedium;
+      th {
+        color: $textColorPrimary;
+        background-color: $tableHeaderBackgroundColor;
+        border-color: $tableBorderColor !important;
+      }
+      .el-table__cell {
+        padding: 8px 0;
+      }
+    }
+    .el-table__body {
+      color: $textColorRegular;
+      .el-table__cell {
+        padding: 5px 0;
+        border-color: $tableBorderColor;
+        &.input_column .cell {
+          padding: 0 5px;
+        }
+      }
+    }
+    &.el-table--enable-row-hover .el-table__body tr:hover>td.el-table__cell {
+      background-color: $tableRowHoverBackgroundColor !important;
+    }
+    &.el-table--striped .el-table__body tr.el-table__row--striped td.el-table__cell {
+      background: $tableStripeBackgroundColor;
+    }
+    .el-table__empty-block {
+      min-height: 45px;
+      .el-table__empty-text {
+        line-height: 45px;
+      }
+    }
+  }
+
+  .el-button {
+    &.el-button--medium {
+      min-height: 30px;
+      padding: 7px 20px;
+    }
+    &.el-button--default:not(.el-button--primary):not(.el-button--success):not(.el-button--warning):not(.el-button--danger):not(.el-button--info) {
+      color: $textColorRegular;
+      background-color: $colorWhite;
+      border-color: $borderColorBase;
+      &.is-disabled {
+        color: $textColorPlaceholder;
+        background: $colorWhite;
+        border-color: $borderColorLighter;
+      }
+      &:not(.is-disabled) {
+        &:hover, &:focus {
+          color: $colorPrimary;
+          border-color: $colorPrimaryLight7;
+          background-color: $colorPrimaryLight9;
+        }
+        &:active {
+          color: $buttonPrimaryActiveColor;
+          border-color: $buttonPrimaryActiveColor;
+        }
+      }
+    }
+    &.el-button--primary {
+      color: $colorWhite;
+      background-color: $colorPrimary;
+      border-color: $colorPrimary;
+      &.is-disabled {
+        background: $colorPrimaryLight5;
+        border-color: $colorPrimaryLight5;
+        &.is-plain {
+          color: $colorPrimaryLight4;
+          background: $colorPrimaryLight9;
+          border-color: $colorPrimaryLight8;
+        }
+      }
+      &:not(.is-disabled) {
+        &:hover {
+          background: $colorPrimaryLight2;
+          border-color: $colorPrimaryLight2;
+        }
+        &:active {
+          background: $buttonPrimaryActiveColor;
+          border-color: $buttonPrimaryActiveColor;
+        }
+        &.is-plain {
+          color: $colorPrimary;
+          background: $colorPrimaryLight9;
+          border-color: $colorPrimaryLight6;
+          &:hover {
+            color: $colorWhite;
+            background: $colorPrimary;
+            border-color: $colorPrimary;
+          }
+          &:active {
+            background: $buttonPrimaryActiveColor;
+            border-color: $buttonPrimaryActiveColor;
+          }
+        }
+      }
+    }
+    &.el-button--success {
+      color: $colorWhite;
+      background-color: $colorSuccess;
+      border-color: $colorSuccess;
+      &.is-disabled {
+        background-color: $colorSuccessLight5;
+        border-color: $colorSuccessLight5;
+        &.is-plain {
+          color: $colorSuccessLight4;
+          background-color: $colorSuccessLight9;
+          border-color: $colorSuccessLight8;
+        }
+      }
+      &:not(.is-disabled) {
+        &:hover {
+          background-color: $colorSuccessLight2;
+          border-color: $colorSuccessLight2;
+        }
+        &:active {
+          background-color: $buttonSuccessActiveColor;
+          border-color: $buttonSuccessActiveColor;
+        }
+        &.is-plain {
+          color: $colorSuccess;
+          background: $colorSuccessLight9;
+          border-color: $colorSuccessLight6;
+          &:hover {
+            color: $colorWhite;
+            background-color: $colorSuccess;
+            border-color: $colorSuccess;
+          }
+          &:active {
+            background-color: $buttonSuccessActiveColor;
+            border-color: $buttonSuccessActiveColor;
+          }
+        }
+      }
+    }
+    &.el-button--warning {
+      color: $colorWhite;
+      background-color: $colorWarning;
+      border-color: $colorWarning;
+      &.is-disabled {
+        background-color: $colorWarningLight5;
+        border-color: $colorWarningLight5;
+        &.is-plain {
+          color: $colorWarningLight4;
+          background-color: $colorWarningLight9;
+          border-color: $colorWarningLight8;
+        }
+      }
+      &:not(.is-disabled) {
+        &:hover {
+          background-color: $colorWarningLight2;
+          border-color: $colorWarningLight2;
+        }
+        &:active {
+          background-color: $buttonWarningActiveColor;
+          border-color: $buttonWarningActiveColor;
+        }
+        &.is-plain {
+          color: $colorWarning;
+          background: $colorWarningLight9;
+          border-color: $colorWarningLight6;
+          &:hover {
+            color: $colorWhite;
+            background-color: $colorWarning;
+            border-color: $colorWarning;
+          }
+          &:active {
+            background-color: $buttonWarningActiveColor;
+            border-color: $buttonWarningActiveColor;
+          }
+        }
+      }
+    }
+    &.el-button--danger {
+      color: $colorWhite;
+      background-color: $colorDanger;
+      border-color: $colorDanger;
+      &.is-disabled {
+        background-color: $colorDangerLight5;
+        border-color: $colorDangerLight5;
+        &.is-plain {
+          color: $colorDangerLight4;
+          background-color: $colorDangerLight9;
+          border-color: $colorDangerLight8;
+        }
+      }
+      &:not(.is-disabled) {
+        &:hover {
+          background-color: $colorDangerLight2;
+          border-color: $colorDangerLight2;
+        }
+        &:active {
+          background-color: $buttonDangerActiveColor;
+          border-color: $buttonDangerActiveColor;
+        }
+        &.is-plain {
+          color: $colorDanger;
+          background: $colorDangerLight9;
+          border-color: $colorDangerLight6;
+          &:hover {
+            color: $colorWhite;
+            background-color: $colorDanger;
+            border-color: $colorDanger;
+          }
+          &:active {
+            background-color: $buttonDangerActiveColor;
+            border-color: $buttonDangerActiveColor;
+          }
+        }
+      }
+    }
+    &.el-button--info {
+      color: $colorWhite;
+      background-color: $colorInfo;
+      border-color: $colorInfo;
+      &.is-disabled {
+        background-color: $colorInfoLight5;
+        border-color: $colorInfoLight5;
+        &.is-plain {
+          color: $colorInfoLight4;
+          background-color: $colorInfoLight9;
+          border-color: $colorInfoLight8;
+        }
+      }
+      &:not(.is-disabled) {
+        &:hover {
+          background-color: $colorInfoLight2;
+          border-color: $colorInfoLight2;
+        }
+        &:active {
+          background-color: $buttonInfoActiveColor;
+          border-color: $buttonInfoActiveColor;
+        }
+        &.is-plain {
+          color: $colorInfo;
+          background: $colorInfoLight9;
+          border-color: $colorInfoLight6;
+          &:hover {
+            color: $colorWhite;
+            background-color: $colorInfo;
+            border-color: $colorInfo;
+          }
+          &:active {
+            background-color: $buttonInfoActiveColor;
+            border-color: $buttonInfoActiveColor;
+          }
+        }
+      }
+    }
+  }
+
+  .el-tag {
+    background-color: $colorPrimaryLight9;
+    border-color: $colorPrimaryLight8;
+    color: $colorPrimary;
+    &:hover {
+      color: $colorPrimary;
+    }
+    .el-tag__close {
+      color: $colorPrimary;
+      &:hover {
+        background-color: $colorPrimary;
+      }
+    }
+    &.el-tag--dark {
+      background-color: $colorPrimary;
+      border-color: $colorPrimary;
+      color: $colorWhite;
+      .el-tag__close:hover {
+        background-color: $textColorSecondary;
+      }
+    }
+  }
+
+  .el-switch {
+    .el-switch__core {
+      background: #f0f0f2;
+      border-color: #c5c5c5;
+    }
+    &.is-checked .el-switch__core {
+      border-color: $colorPrimary;
+      background-color: $colorPrimary;
+    }
+    .el-switch__input:focus + .el-switch__core {
+      box-shadow: 0 0 3px 1px $colorPrimary;
+      border-color: $colorPrimary;
+    }
+  }
+
+  .el-radio {
+    &:hover:not(.is-disabled) {
+      .el-radio__inner {
+        border-color: $colorPrimary;
+      }
+    }
+    .el-radio__inner {
+      width: 16px;
+      height: 16px;
+      &::after {
+        width: 6px;
+        height: 6px;
+      }
+    }
+    .el-radio__label {
+      padding-left: 3px;
+      line-height: 16px;
+      color: $textColorRegular;
+    }
+    .el-radio__input {
+      &.is-checked:not(.is-disabled) {
+        .el-radio__inner {
+          border-color: $colorPrimary;
+          background: $colorPrimary;
+          &::after {
+            background-color: $colorWhite;
+          }
+        }
+        + .el-radio__label {
+          color: $colorPrimary;
+        }
+      }
+      &:focus-within .el-radio__inner {
+        box-shadow: 0 0 3px 1px $colorPrimary;
+      }
+    }
+    &:focus:not(.is-focus):not(:active):not(.is-disabled) .el-radio__inner {
+      box-shadow: 0 0 3px 1px $colorPrimary !important;
+    }
+  }
+  .showonly .el-radio {
+    .el-radio__input {
+      + .el-radio__label {
+        color: $textColorRegular;
+      }
+      &.is-checked.is-disabled {
+        .el-radio__inner {
+          border-color: $colorPrimary;
+          background: $colorPrimary;
+          &::after {
+            background-color: $colorWhite;
+          }
+        }
+        + .el-radio__label {
+          color: $colorPrimary;
+        }
+      }
+    }
+  }
+
+  .el-checkbox {
+    &:hover:not(.is-disabled) {
+      .el-checkbox__inner {
+        border-color: $colorPrimary;
+      }
+    }
+    .el-checkbox__inner {
+      width: 18px;
+      height: 18px;
+      &::after {
+        width: 4px;
+        height: 10px;
+        border-width: 2px;
+        top: 0;
+        left: 5px;
+      }
+    }
+    .el-checkbox__label {
+      padding-left: 8px;
+      line-height: 18px;
+      color: $textColorRegular;
+    }
+    .el-checkbox__input {
+      &.is-checked, &.is-indeterminate {
+        &:not(.is-disabled) {
+          .el-checkbox__inner {
+            border-color: $colorPrimary;
+            background: $colorPrimary;
+            &::after {
+              border-color: $colorWhite;
+            }
+          }
+          + .el-checkbox__label {
+            color: $colorPrimary;
+          }
+        }
+      }
+      &.is-indeterminate .el-checkbox__inner::before {
+        transform: scale(0.6);
+        top: 7px;
+      }
+      &:focus-within .el-checkbox__inner {
+        box-shadow: 0 0 3px 1px $colorPrimary;
+        border-color: $colorPrimary;
+      }
+    }
+  }
+  .showonly .el-checkbox {
+    .el-checkbox__input {
+      + .el-checkbox__label {
+        color: $textColorRegular;
+      }
+      &.is-checked, &.is-indeterminate {
+        &.is-disabled {
+          .el-checkbox__inner {
+            border-color: $colorPrimary;
+            background: $colorPrimary;
+            &::after {
+              border-color: $colorWhite;
+            }
+          }
+          + .el-checkbox__label {
+            color: $colorPrimary;
+          }
+        }
+      }
+    }
+  }
+
+  .el-message-box {
+    .el-message-box__title {
+      color: $textColorPrimary;
+      font-size: $fontSizeMedium;
+    }
+    .el-message-box__content {
+      color: $textColorRegular;
+    }
+    .el-message-box__headerbtn .el-message-box__close {
+      color: $textColorSecondary;
+      font-size: $fontSizeExtraLarge;
+      &:hover {
+        color: $colorPrimary;
+      }
+    }
+    .el-message-box__btns {
+      .el-button--small {
+        padding: 7px 14px;
+      }
+    }
+  }
+
+  .el-dialog {
+    .el-dialog__title {
+      color: $textColorPrimary;
+    }
+    .el-dialog__body {
+      color: $textColorRegular;
+      padding-top: 10px;
+    }
+    .el-dialog__headerbtn .el-dialog__close {
+      color: $textColorSecondary;
+      font-size: $fontSizeExtraLarge;
+      &:hover {
+        color: $colorPrimary;
+      }
+    }
+  }
+
+  .el-tree {
+    color: $textColorRegular;
+    .el-tree-node__content {
+      padding-right: 8px;
+      > .el-tree-node__expand-icon {
+        padding-left: 8px;
+      }
+    }
+    .el-tree__empty-block {
+      min-height: 45px;
+    }
+  }
+
+  .el-descriptions {
+    color: $textColorPrimary;
+    .el-descriptions__body {
+      color: $textColorRegular;
+    }
+    .el-descriptions-item__label {
+      color: $textColorPrimary;
+      font-weight: bold;
+    }
+  }
+
+  .el-date-editor {
+    .el-range-separator {
+      width: auto;
+    }
+    &.showonly.is-disabled .el-input__inner {
+      color: $textColorRegular;
+    }
+  }
+
+  .el-dropdown-menu {
+    .el-dropdown-menu__item {
+      &:hover, &:focus {
+        background-color: $colorPrimaryLight9;
+        color: $colorPrimaryLight2;
+      }
+    }
+  }
+
+  .el-pagination {
+    .el-pager li.active {
+      color: $colorPrimary;
+    }
+    &.is-background .el-pager li:not(.disabled).active {
+      background-color: $colorPrimary;
+    }
+  }
+
+  .el-select-dropdown {
+    .el-select-dropdown__item.selected {
+      color: $colorPrimary;
+    }
+    .el-select-dropdown__item.hover, .el-select-dropdown__item:hover {
+      background-color: $colorPrimaryLight9;
+    }
+  }
+
+  .el-image-viewer__wrapper {
+    .el-image-viewer__actions__inner {
+      > i {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .el-upload-list {
+    .el-upload-list__item.is-success .el-upload-list__item-name:hover {
+      color: $colorPrimary;
+    }
+  }
+
+  .el-radio-group {
+    .el-radio-button__inner:hover {
+      color: $colorPrimary;
+    }
+    .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+      background-color: $colorPrimary;
+      border-color: $colorPrimary;
+      box-shadow: -1px 0 0 0 $colorPrimary;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+$transitionDuration: 0.3s;
+$transitionDurationFast: 0.2s;
+$transitionFunctionEaseInOutBezier: cubic-bezier(0.645, 0.045, 0.355, 1);
+$transitionFunctionFastBezier: cubic-bezier(0.23, 1, 0.32, 1);
+$transitionAll: all $transitionDuration $transitionFunctionEaseInOutBezier;
+$transitionFade: opacity $transitionDuration $transitionFunctionFastBezier;
+$transitionMdFade: transform $transitionDuration $transitionFunctionFastBezier, opacity $transitionDuration $transitionFunctionFastBezier;
+$transitionFadeLinear: opacity $transitionDurationFast linear;
+$transitionBorder: border-color $transitionDurationFast $transitionFunctionEaseInOutBezier;
+$transitionColor: color $transitionDurationFast $transitionFunctionEaseInOutBezier;
